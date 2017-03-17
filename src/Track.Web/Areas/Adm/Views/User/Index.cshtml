@@ -1,0 +1,88 @@
+﻿@{
+
+  Layout = "~/Areas/Adm/Views/Shared/_LayoutBody.cshtml";
+
+}
+@section HeadStyle {
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="~/lib/animate.css/animate.css" rel="stylesheet">
+<link href="~/css/site.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap-table/dist/bootstrap-table.css" />
+}
+
+@section AfterScripts{
+    <script src="~/lib/bootstrap-table/dist/bootstrap-table.js"></script>
+<script src="~/lib/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+    <script>
+        $('#table').bootstrapTable({
+            columns: [{
+                field: 'id',
+                title: 'Item ID'
+            }, {
+                field: 'name',
+                title: 'Item Name'
+            }, {
+                field: 'price',
+                title: 'Item Price'
+            }],
+            url: "/js/data1.json"
+        });
+    </script>
+}
+   <div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                <button type="button" class="btn btn-outline btn-default">
+                    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>新增
+                </button>
+                <button type="button" class="btn btn-outline btn-default">
+                    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>修改
+                </button>
+                <button type="button" class="btn btn-outline btn-default">
+                    <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
+                </button>
+                <button type="button" class="btn btn-outline btn-default">
+                    <i class="glyphicon glyphicon-cog" aria-hidden="true"></i>授权
+                </button>
+            </div>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="row row-lg">
+                <div class="col-sm-12">
+                    <!-- Example Events -->
+                    <div class="example-wrap">
+                        <div class="example">
+                            <div class="alert alert-success" id="examplebtTableEventsResult" role="alert" style="display:none">
+                                事件结果
+                            </div>
+                           
+                            <table id="table" data-height="400" data-mobile-responsive="true" data-click-to-select="true">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="id">ID</th>
+                                        <th data-field="name">名称</th>
+                                        <th data-field="price">价格</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- End Example Events -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

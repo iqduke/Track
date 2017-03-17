@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("HeadStyle", required:false)
+
+    @RenderSection("BeforeScripts", required: false)
+</head>
+<body class="gray-bg">
+    @RenderBody()
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    @RenderSection("AfterScripts", required: false)
+</body>
+</html>

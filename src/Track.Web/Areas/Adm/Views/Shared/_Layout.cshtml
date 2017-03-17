@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>主页</title>
+
+    <meta name="keywords" content="响应式后台">
+    <meta name="description" content="Html5+CSS3等现代技术">
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/layer/build/skin/default/layer.css" id="layui_layer_skinlayercss">
+    <link rel="stylesheet" href="~/lib/layer/build/skin/moon/style.css" id="layui_layer_skinmoonstylecss">
+    @RenderSection("HeadStyle", required:false)
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg pace-done" style="overflow:hidden">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close">
+                <i class="fa fa-times-circle"></i>
+            </div>
+            <div class="slimScrollDiv" style="position: relative; width: auto; height: 100%;">
+                <div class="sidebar-collapse" style="width: auto; height: 100%;">
+                    <ul class="nav" id="side-menu" style="display: block;">
+                        <li class="nav-header">
+                            <div class="dropdown profile-element">
+                                <span><img alt="image" class="img-circle" src="~/images/profile_small.jpg"></span>
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                                    <span class="clear">
+                                        <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
+                                        <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                    <li>
+                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_avatar.html" data-index="0">修改头像</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/profile.html" data-index="1">个人资料</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/contacts.html" data-index="2">联系我们</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mailbox.html" data-index="3">信箱</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="http://www.zi-han.net/theme/hplus/login.html">安全退出</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="logo-element">
+                                H+
+                            </div>
+                        </li>
+                        <li class="">
+                            <a class="J_menuItem" href="/Adm/Control/Index" data-index="0">
+                                <i class="fa fa-home"></i>
+                                <span class="nav-label" >控制面板</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <i class="fa fa fa-bar-chart-o"></i>
+                                <span class="nav-label">系统设置</span>
+                                <span class="fa arrow"></span>
+                            </a>
+                            <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li>
+                                    <a class="J_menuItem" href="/Adm/Control/Index1" data-index="9">菜单管理</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="/Adm/Control/Index2" data-index="10">角色管理</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="/Adm/User/Index" data-index="11">用户管理</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="/Adm/Control/Index4" data-index="12">角色授权</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="http://www.zi-han.net/theme/hplus/mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">日志管理 </span><span class="label label-warning pull-right">16</span></a>
+                            <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li>
+                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mailbox.html" data-index="16">收件箱</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mail_detail.html" data-index="17">查看邮件</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mail_compose.html" data-index="18">写信</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 4px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 645.378px;"></div>
+                <div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.9; z-index: 90; right: 1px;"></div>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" method="post" action="http://www.zi-han.net/theme/hplus/search_results.html">
+                            <div class="form-group">
+                                <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="http://www.zi-han.net/theme/hplus/#" aria-expanded="false">
+                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages">
+                                <li class="m-t-xs">
+                                    <div class="dropdown-messages-box">
+                                        
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="http://www.zi-han.net/theme/hplus/#" aria-expanded="false">
+                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="http://www.zi-han.net/theme/hplus/mailbox.html">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> 您有16条未读消息
+                                            <span class="pull-right text-muted small">4分钟前</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="http://www.zi-han.net/theme/hplus/profile.html">
+                                        <div>
+                                            <i class="fa fa-qq fa-fw"></i> 3条新回复
+                                            <span class="pull-right text-muted small">12分钟钱</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/notifications.html" data-index="89">
+                                            <strong>查看所有 </strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown hidden-xs">
+                            <a class="right-sidebar-toggle" aria-expanded="false">
+                                <i class="fa fa-tasks"></i> 主题
+                            </a>
+                        </li>
+                        <li class="hidden-xs">
+                        <a href="http://www.zi-han.net/theme/hplus/login.html"><i class="fa fa fa-sign-out"></i> 退出</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row content-tabs">
+                <button class="roll-nav roll-left J_tabLeft">
+                    <i class="fa fa-backward"></i>
+                </button>
+                <nav class="page-tabs J_menuTabs">
+                    <div class="page-tabs-content" style="margin-left: 0px;">
+                        <a href="javascript:;" class="J_menuTab active" data-id="/Adm/Control/Index">首页</a>
+                    </div>
+                </nav>
+                <button class="roll-nav roll-right J_tabRight">
+                    <i class="fa fa-forward"></i>
+                </button>
+                <div class="btn-group roll-nav roll-right">
+                    <button class="dropdown J_tabClose" data-toggle="dropdown" aria-expanded="false">
+                        关闭操作<span class="caret"></span>
+
+                    </button>
+                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                        <li class="J_tabShowActive">
+                            <a>定位当前选项卡</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="J_tabCloseAll">
+                            <a>关闭全部选项卡</a>
+                        </li>
+                        <li class="J_tabCloseOther">
+                            <a>关闭其他选项卡</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row J_mainContent" id="content-main">
+                @RenderBody()
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/Adm/Control/Index" frameborder="0" data-id="/Adm/Control/Index" seamless="" style="display: inline;"></iframe>
+            </div>
+            <div class="footer">
+                <div class="pull-right">
+                    © 2017-2018 <a href="http://www.zi-han.net/" target="_blank">test</a>
+                </div>
+            </div>
+        </div>
+        <!--右侧部分结束-->
+        <!--右侧边栏开始-->
+        <div id="right-sidebar" class="">
+            <div class="slimScrollDiv" style="position: relative; width: auto; height: 100%;">
+                <div class="sidebar-container" style="width: auto; height: 100%;">
+
+                    <ul class="nav nav-tabs navs-3">
+
+                        <li class="active">
+                            <a data-toggle="tab" href="http://www.zi-han.net/theme/hplus/#tab-1" aria-expanded="true">
+                                <i class="fa fa-gear"></i> 主题
+                            </a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="http://www.zi-han.net/theme/hplus/#tab-2" aria-expanded="false">
+                                通知
+                            </a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="http://www.zi-han.net/theme/hplus/#tab-3" aria-expanded="false">
+                                项目进度
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane active">
+                            <div class="sidebar-title">
+                                <h3> <i class="fa fa-comments-o"></i> 主题设置</h3>
+                                <small><i class="fa fa-tim"></i> 你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
+                            </div>
+                            <div class="skin-setttings">
+                                <div class="title">主题设置</div>
+                                <div class="setings-item">
+                                    <span>收起左侧菜单</span>
+                                    <div class="switch">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="collapsemenu">
+                                            <label class="onoffswitch-label" for="collapsemenu">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setings-item">
+                                    <span>固定顶部</span>
+
+                                    <div class="switch">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="fixednavbar" class="onoffswitch-checkbox" id="fixednavbar">
+                                            <label class="onoffswitch-label" for="fixednavbar">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setings-item">
+                                    <span>
+                                        固定宽度
+                                    </span>
+
+                                    <div class="switch">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="boxedlayout" class="onoffswitch-checkbox" id="boxedlayout">
+                                            <label class="onoffswitch-label" for="boxedlayout">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title">皮肤选择</div>
+                                <div class="setings-item default-skin nb">
+                                    <span class="skin-name ">
+                                        <a href="http://www.zi-han.net/theme/hplus/#" class="s-skin-0">
+                                            默认皮肤
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="setings-item blue-skin nb">
+                                    <span class="skin-name ">
+                                        <a href="http://www.zi-han.net/theme/hplus/#" class="s-skin-1">
+                                            蓝色主题
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="setings-item yellow-skin nb">
+                                    <span class="skin-name ">
+                                        <a href="http://www.zi-han.net/theme/hplus/#" class="s-skin-3">
+                                            黄色/紫色主题
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-pane">
+
+                            <div class="sidebar-title">
+                                <h3> <i class="fa fa-comments-o"></i> 最新通知</h3>
+                                <small><i class="fa fa-tim"></i> 您当前有10条未读信息</small>
+                            </div>
+
+                            <div>
+                                <div class="sidebar-message">
+                                    <a href="http://www.zi-han.net/theme/hplus/#">
+                                        <div class="pull-left text-center">
+                                          
+                                        </div>
+                                        <div class="media-body">
+                                            我发起了一个投票 【你认为下午大盘会翻红吗？】
+                                            <br>
+                                            <small class="text-muted">星期一 8:37</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="tab-3" class="tab-pane">
+
+                            <div class="sidebar-title">
+                                <h3> <i class="fa fa-cube"></i> 最新任务</h3>
+                                <small><i class="fa fa-tim"></i> 您当前有14个任务，10个已完成</small>
+                            </div>
+
+                            <ul class="sidebar-list">
+                                <li>
+                                    <a href="http://www.zi-han.net/theme/hplus/#">
+                                        <div class="small pull-right m-t-xs">9小时以后</div>
+                                        <h4>市场调研</h4> 按要求接收教材；
+
+                                        <div class="small">已完成： 22%</div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                        </div>
+                                        <div class="small text-muted m-t-xs">项目截止： 4:00 - 2015.10.01</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.zi-han.net/theme/hplus/#">
+                                        <div class="small pull-right m-t-xs">9小时以后</div>
+                                        <h4>可行性报告研究报上级批准 </h4> 编写目的编写本项目进度报告的目的在于更好的控制软件开发的时间,对团队成员的 开发进度作出一个合理的比对
+
+                                        <div class="small">已完成： 48%</div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 48%;" class="progress-bar"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.zi-han.net/theme/hplus/#">
+                                        <div class="small pull-right m-t-xs">9小时以后</div>
+                                        <h4>获证开盘</h4> 编写目的编写本项目进度报告的目的在于更好的控制软件开发的时间,对团队成员的 开发进度作出一个合理的比对
+
+                                        <div class="small">已完成： 14%</div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 4px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 600px;"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.4; z-index: 90; right: 1px;"></div>
+            </div>
+        </div>
+        <!--右侧边栏结束-->
+        <!--mini聊天窗口开始-->
+        <div class="small-chat-box fadeInRight animated">
+
+            <div class="heading" draggable="true">
+                <small class="chat-date pull-right">
+                    2015.9.1
+                </small> 与 Beau-zihan 聊天中
+            </div>
+
+            <div class="slimScrollDiv" style="position: relative; width: auto; height: 234px;">
+                <div class="content" style="width: auto; height: 234px;">
+
+                    <div class="left">
+                        <div class="author-name">
+                            Beau-zihan <small class="chat-date">
+                                10:02
+                            </small>
+                        </div>
+                        <div class="chat-message active">
+                            你好
+                        </div>
+
+                    </div>
+                    <div class="right">
+                        <div class="author-name">
+                            游客
+                            <small class="chat-date">
+                                11:24
+                            </small>
+                        </div>
+                        <div class="chat-message">
+                            你好，请问H+有帮助文档吗？
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class="author-name">
+                            Beau-zihan
+                            <small class="chat-date">
+                                08:45
+                            </small>
+                        </div>
+                        <div class="chat-message active">
+                            有，购买的H+源码包中有帮助文档，位于docs文件夹下
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="author-name">
+                            游客
+                            <small class="chat-date">
+                                11:24
+                            </small>
+                        </div>
+                        <div class="chat-message">
+                            那除了帮助文档还提供什么样的服务？
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class="author-name">
+                            Beau-zihan
+                            <small class="chat-date">
+                                08:45
+                            </small>
+                        </div>
+                        <div class="chat-message active">
+                            1.所有源码(未压缩、带注释版本)；
+                            <br> 2.说明文档；
+                            <br> 3.终身免费升级服务；
+                            <br> 4.必要的技术支持；
+                            <br> 5.付费二次开发服务；
+                            <br> 6.授权许可；
+                            <br> ……
+                            <br>
+                        </div>
+                    </div>
+
+
+                </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 4px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.4; z-index: 90; right: 1px;"></div>
+            </div>
+            <div class="form-chat">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control"> <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">
+                            发送
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div id="small-chat">
+            <span class="badge badge-warning pull-right">5</span>
+            <a class="open-small-chat">
+                <i class="fa fa-comments"></i>
+
+            </a>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/metisMenu/dist/metisMenu.js"></script>
+    <script src="~/lib/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="~/lib/layer/build/layer.js"></script>
+    <script src="~/js/site.js"></script>
+    <script type="text/javascript" src="~/js/contabs.js"></script>
+    <script src="~/lib/PACE/pace.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
